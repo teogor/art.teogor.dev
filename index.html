@@ -6,33 +6,33 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Teodor Grigor</title>
-    <meta content="An Android Engineer, based in Romania building astonishing android applications and video games."
+    <title>Teogor's Art Hub</title>
+    <meta content="Discover the world of Teogor's art portfolio, including their latest works, exhibitions, and art-related projects."
           name="description">
-    <meta content="Teodor Grigor, teogor, Android Engineer, Video Game Developer" name="keywords">
-    <meta content="Teodor Grigor" name="title">
-    <meta content="Teodor Grigor" property="og:title">
-    <meta content="An Android Engineer, based in Romania building astonishing android applications and video games."
+    <meta content="Teogor, Teodor Grigor, Art, Artist, Illustrations, Paintings, Digital Art" name="keywords">
+    <meta content="Teogor's Art Hub" name="title">
+    <meta content="Teogor's Art Hub" property="og:title">
+    <meta content="Discover the world of Teogor's art portfolio, including their latest works, exhibitions, and art-related projects."
           property="og:description">
-    <meta content="https://teogor.dev" property="og:url">
-    <meta content="teogor.dev" property="og:site_name">
+    <meta content="https://art.teogor.dev.dev" property="og:url">
+    <meta content="art.teogor.dev" property="og:site_name">
     <meta content="https://teogor.dev/res/cover/website.png"
           property="og:image">
 
     <meta content="HXitkbb9LRYXchFF3kDC67m4X53AV0vMhvRoCOsyURc" name="google-site-verification"/>
 
-    <meta content="teogor.dev" property="twitter:domain">
-    <meta content="https://teogor.dev/" property="twitter:url">
+    <meta content="art.teogor.dev" property="twitter:domain">
+    <meta content="https://art.teogor.dev/" property="twitter:url">
     <meta content="summary_large_image" name="twitter:card">
-    <meta content="Teodor Grigor" name="twitter:title">
-    <meta content="An Android Engineer, based in Romania building astonishing android applications and video games."
+    <meta content="Teogor's Art Hub" name="twitter:title">
+    <meta content="Discover the world of Teogor's art portfolio, including their latest works, exhibitions, and art-related projects."
           name="twitter:description">
     <meta content="https://teogor.dev/res/cover/website.png"
           property="twitter:image">
 
-
     <!-- stylesheets -->
     <link href="https://assets.teogor.dev/styles/tailwindoutput.css" rel="stylesheet">
+    <link href="/ux.css" rel="stylesheet">
 
     <!-- favicons -->
     <link href="favicons/android-chrome-512x512.png" rel="icon" sizes="512x512" type="image/png">
@@ -96,17 +96,31 @@
     <!-- content goes here -->
     <div class="py-top-128 text-center animate-this cursor-none" data-barba="container" data-barba-namespace="home">
         <h2 class="font-extrabold text-6xl py-5 xl:mx-40 2xl:mx-80 lg:text-8xl text-white md:text-6xl cursorHover">
-            Welcome to my</br><span class="text-purple-500">Art</span> Portfolio!
+            <span class="text-purple-500">Art</span> Hub
         </h2>
-        <p class="text-xl text-white py-8 px-3 xl:mx-80 2xl:mx-110 md:text-2xl cursorHover">
-            Check it out on Adobe Stock
-        </p>
 
-        <div class="hidden lg:block w-96 h-96 ml-180 pointer-events-none absolute border-2 border-gray-600 rounded-full"></div>
+        <div class="flex justify-center">
+            <div id="projects-container"
+                 class="grid gap-2 grid-flow-row sm:mt-12 sm:grid-flow-row sm:grid-cols-2 sm:gap-6 lg:grid-col-2 lg:grid-flow-row lg:gap-8">
+                <template id="projects-template">
+                    <a target="_blank"
+                       class="py-8 px-6 sm:px-10 md:px-8 bg-purple-600 text-center hover:bg-purple-700 border-transparent rounded-md shadow-md space-y-2 mt-5 ml-4 w-11/12 sm:ml-0 sm:w-80 sm:mt-0 lg:w-[32rem] text-left relative transtion-all duration-300 ease-in-out top-0 hover:-top-1 hover:shadow-xl"
+                       x-intersect="$el.classList.add('fadeInUp')">
+                        <h2 class="text-2xl py-5 text-white font-semibold leading-6"></h2>
+                        <p class="text-lg text-slate-200">{{ description }}</p>
+                        <div id="tags" class="flex flex-wrap justify-center items-center">
+                            <p id="tag-clone" class="tag not-selectable">#empty</p>
+                        </div>
+                    </a>
+                </template>
+                <script src="features/collections/projects.js" type="module"></script>
+            </div>
+        </div>
+
         <a href="https://stock.adobe.com/ro/contributor/211244781/Teogor" target="_blank">
             <button
-                    class="py-6 my-10 px-7 text-xl md:text-lg md:py-5 md:px-7 md:my-8 xl:my-14 xl:px-10 xl:py-7 rounded-full bg-white button transition duration-200 ease-in-out text-purple-600 hover:text-white hover:bg-purple-700">
-                PORTFOLIO
+                    class="py-6 my-20 px-7 text-xl md:py-5 md:px-7 md:my-24 xl:my-20 xl:px-10 xl:py-7 rounded-full bg-white button transition duration-200 ease-in-out text-purple-600 hover:text-white hover:bg-purple-700"
+                    x-intersect="$el.classList.add('fadeInUp')">Full Portfolio
             </button>
         </a>
     </div>
